@@ -4,7 +4,7 @@
   "description": "Deploying a sample site",
   "main": "index.js",
   "scripts": {
-   "start": "node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/shivam7374/Sample-Heroku-#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sequelize": "^5.21.10",
+    "sqlite3": "^4.2.0"
   }
 }
