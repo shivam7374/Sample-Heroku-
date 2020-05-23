@@ -1,0 +1,22 @@
+{
+  "name": "sample-heroku-",
+  "version": "1.0.0",
+  "description": "Deploying a sample site",
+  "main": "index.js",
+  "scripts": {
+   "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivam7374/Sample-Heroku-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivam7374/Sample-Heroku-/issues"
+  },
+  "homepage": "https://github.com/shivam7374/Sample-Heroku-#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
