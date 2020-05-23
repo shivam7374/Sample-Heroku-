@@ -1,7 +1,7 @@
 const sequelize=require('sequelize')
 
 const db=new sequelize({
-    dialect:sqlite,
+    dialect: 'sqlite',
     storage:__dirname+'/test.db'
 })
 
@@ -17,7 +17,7 @@ const Tasks=db.define('task',{
     },
     done:{
         type:sequelize.DataTypes.BOOLEAN ,
-        defaultValue:falses
+        defaultValue:false
 
     }
 })
