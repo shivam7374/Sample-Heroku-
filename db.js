@@ -18,11 +18,12 @@ const Tasks = db.define('task', {
   done: {
     type: Sequelize.DataTypes.BOOLEAN,
     defaultValue: false
-  },
-  priority: {
-    type: Sequelize.DataTypes.ENUM('high', 'low', 'normal'),
-    defaultValue: 'normal'
   }
+  //,
+  // priority: {
+  //   type: Sequelize.DataTypes.ENUM('high', 'low', 'normal'),
+  //   defaultValue: 'normal'
+  // }
 })
 
 module.exports = {
