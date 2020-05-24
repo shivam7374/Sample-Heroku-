@@ -1,6 +1,9 @@
 const sequelize=require('sequelize')
 
-const db=new sequelize("ahoryaneogmils:a73b68642f81426176e85be04b315147a902aaa75f379e5865fd3d052f6f2421@ec2-34-204-22-76.compute-1.amazonaws.com:5432/dbidshvkj1tq01")
+const db=new sequelize({
+    dialect:'sqlite',
+    storage: __dirname+'/test.db'
+})
 
 const Tasks=db.define('task',{
     id:{
