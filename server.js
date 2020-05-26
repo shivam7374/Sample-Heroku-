@@ -17,7 +17,7 @@ app.get('/tasks',async (req,res)=>{
 app.post('/tasks',async (req,res)=>{
     res.send(await Tasks.create(req.body))
 })
-db.sync().then(()=>{
+db.sync({alter:true}).then(()=>{
 
     app.listen(PORT,(req,res)=>{
         console.log(`http://localhost:${PORT}`) // this allows heroku to set the port 
