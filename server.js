@@ -1,27 +1,28 @@
-const express=require('express')
-const{ db, Tasks}=require('./db')
+const express = require('express')
 
-const app=express()
-const PORT=process.env.PORT || 4444
+const { db, Tasks } = require('./db')
 
-app.use(express.urlencoded({extended:true}))
+const app = express()
+
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-app.get('/',(req,res)=>{
-    res.send('Hello World !!')
-})
-app.get('/tasks',async (req,res)=>{
-    res.send(await Tasks.findAll())
+const PORT = process.env.PORT || 4444
+
+app.get('/', (req, res) => {
+  res.send('Hello World')
 })
 
-app.post('/tasks',async (req,res)=>{
-    res.send(await Tasks.create(req.body))
+app.get('/tasks', async (req, res) => {
+  res.send(await Tasks.findAll())
 })
-db.sync({alter:true}).then(()=>{
 
-    app.listen(PORT,(req,res)=>{
-        console.log(`http://localhost:${PORT}`) // this allows heroku to set the port 
-        // now we can write PORT=7666 node server.js then server works at server 7666
-        // so you can choose any server
-    })
+app.post('/tasks', async (req, res) => {
+  res.send(await Tasks.create(req.body))
+})
+
+db.sync({alter: true}).then(() => {
+  app.listen(PORT, (req, res) => {
+    console.log(`started on http://localhost:${PORT}`)
+  })
 })
